@@ -2,10 +2,11 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
-from options import options
-from waiters import wait_for_element
 from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.webdriver.remote.webelement import WebElement
+import time
+from options import options
+from waiters import wait_for_element
 
 service: Service = Service(executable_path="chromedriver.exe")
 driver: WebDriver = webdriver.Chrome(service=service, options=options)
@@ -31,6 +32,6 @@ wait_for_element(driver, By.PARTIAL_LINK_TEXT, "SQLAlchemy Documentation — SQL
 link:WebElement = driver.find_element(By.PARTIAL_LINK_TEXT, "SQLAlchemy Documentation — SQLAlchemy 2.0 Documentation")
 link.click()
 
-wait_for_element(driver, By.TAG_NAME, "h1", 10)
+time.sleep(10)
 
 driver.quit()
