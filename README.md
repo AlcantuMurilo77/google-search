@@ -168,8 +168,6 @@ Você verá o navegador abrindo, buscando no Google, acessando a documentação 
 
 ## Próximos passos
 - Fazer pesquisas utilizando técnicas de OSINT
-- Salvar prints do resultado da automação
-- Automatizar outros sites e fluxos reais
 
 ---
 
