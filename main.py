@@ -31,6 +31,7 @@ wait_for_element(driver, By.PARTIAL_LINK_TEXT, "SQLAlchemy Documentation — SQL
 
 link:WebElement = driver.find_element(By.PARTIAL_LINK_TEXT, "SQLAlchemy Documentation — SQLAlchemy 2.0 Documentation")
 link.click()
+driver.save_screenshot('prints/sql_alc.png')
 
 time.sleep(10)
 
