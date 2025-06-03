@@ -5,6 +5,8 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.webdriver.remote.webelement import WebElement
 import time
+from datetime import datetime
+import os
 from options import options
 from waiters import wait_for_element
 
@@ -31,7 +33,10 @@ wait_for_element(driver, By.PARTIAL_LINK_TEXT, "SQLAlchemy Documentation — SQL
 
 link:WebElement = driver.find_element(By.PARTIAL_LINK_TEXT, "SQLAlchemy Documentation — SQLAlchemy 2.0 Documentation")
 link.click()
-driver.save_screenshot('prints/sql_alc.png')
+
+os.makedirs('prints', exist_ok=True)
+timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+driver.save_screenshot(f'prints/sqlalchemy_{timestamp}.png')
 
 time.sleep(10)
 
